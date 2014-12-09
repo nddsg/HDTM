@@ -40,7 +40,7 @@ Example:
 					 --prefix /data/bshi/wikipedia/graphlab/result/
 
 
-When `hdtm` is finished, you will get a set of results that looks like these
+When `hdtm` is finished, you will get a set of results that looks like this
 
 		bshi@dsg1:/data/bshi/wikipedia/graphlab/result$ ls
 		0_0_0.bin    140_0_0.bin  190_0_0.bin  240_0_0.bin  290_0_0.bin  340_0_0.bin  390_-1.89962e+14_0.bin
@@ -49,14 +49,19 @@ When `hdtm` is finished, you will get a set of results that looks like these
 		120_0_0.bin  170_0_0.bin  220_0_0.bin  270_0_0.bin  320_0_0.bin  370_0_0.bin
 		130_0_0.bin  180_0_0.bin  230_0_0.bin  280_0_0.bin  330_0_0.bin  380_0_0.bin
 
-The first number is the iteration number.
+The first number in file names is the iteration number.
 
 ### Convert `HDTM` binary graph to text file
 
 		./hdtm_ana BINARY_FILE.bin RAND_GRAPH_OUT HIERARCHY_OUT NODE_CHANGES_OUT
 
-* `RAND_GRAPH_OUT` is a random generated graph that have similar structure (|E| = |V| + 1).
+* `ORIGINAL_GRAPH_OUT` is the original graph without modification.
 * `HIERARCHY_OUT` is the result hierarchy.
 * `NODE_CHANGES_OUT` is the change log of every node in original graph
 
-## Results
+## Data analysis
+
+All scripts used in this project is under `scripts` folder. You can use `data_preprocess.py` to reproduce the result.
+
+Graph generation is done in `R`, and you can find the code under `analysis` folder. You can find R package `rdsg` at http://github.com/bxshi/rdsg.
+
