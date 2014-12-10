@@ -1,0 +1,193 @@
+Tue Dec  9 16:18:10 EST 2014
+System Information: 
+#66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+Compiler Information: 
+gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+g++ (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+cmake version 2.8.12.2
+# Release build directory:
+	 RELEASE_DIR=release
+# Debug build directory (optimization disabled):
+	 DEBUG_DIR=debug
+# Directory in which graphlab is installed (prefix):
+	 INSTALL_DIR=/usr/local
+# Is experimental (research) code enabled:
+	 EXPERIMENTAL=false
+# The graphlab home directory: 
+	 GRAPHLAB_HOME=/home/bshi/graphlab
+# The directory in which graphlab installs external dependencies:
+	 DEPS_PREFIX=/home/bshi/graphlab/deps/local
+# Use OpenMP?  This can accelerate some graph building code: 
+	 NO_OPENMP=false
+# Use MPI?  Without MPI GraphLab cannot run distributed: 
+	 NO_MPI=false
+# Use tcmalloc?  Thread-Caching Malloc improves memory allocation: 
+	 NO_TCMALLOC=false
+# The c compiler to use: 
+	 CC=gcc
+# The c++ compiler to use: 
+	 CXX=g++
+# Any addition user defined CFLAGS: 
+	 CFLAGS=
+# The Java compiler: 
+	 JAVAC=javac
+# The cmake binary used to geneate the project:
+	 CMAKE=cmake
+
+
+
+======================= Release ========================
+cmake -D CMAKE_BUILD_TYPE=Release -D NO_OPENMP:BOOL=false -D NO_MPI:BOOL=false -D NO_TCMALLOC:BOOL=false -D CMAKE_INSTALL_PREFIX:STRING=/usr/local -D EXPERIMENTAL:BOOL=false -D CPP11:BOOL=false -D VID32:BOOL=false ../.
+-- The C compiler identification is GNU 4.8.2
+-- The CXX compiler identification is GNU 4.8.2
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.a/home/bshi/graphlab/deps/local/lib/libboost_program_options.a/home/bshi/graphlab/deps/local/lib/libboost_system.a/home/bshi/graphlab/deps/local/lib/libboost_iostreams.a/home/bshi/graphlab/deps/local/lib/libboost_context.a/home/bshi/graphlab/deps/local/lib/libboost_date_time.a
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_program_options.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_program_options.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_system.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_system.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_iostreams.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_iostreams.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_context.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_context.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_date_time.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_date_time.so
+-- Boost Shared libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.so/home/bshi/graphlab/deps/local/lib/libboost_program_options.so/home/bshi/graphlab/deps/local/lib/libboost_system.so/home/bshi/graphlab/deps/local/lib/libboost_iostreams.so/home/bshi/graphlab/deps/local/lib/libboost_context.so/home/bshi/graphlab/deps/local/lib/libboost_date_time.so
+-- Found Java: /usr/bin/java (found version "1.7.0.65") 
+-- Found JNI: /usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so  
+-- jni.h was found at /usr/lib/jvm/default-java/include/jni.h
+-- Java Home guessed: /usr/lib/jvm/default-java
+-- Found ANT: /usr/bin/ant  
+-- Building libhdfs
+-- Found MPI_C: /usr/lib/libmpi.so;/usr/lib/x86_64-linux-gnu/libdl.so;/usr/lib/x86_64-linux-gnu/libhwloc.so  
+-- Found MPI_CXX: /usr/lib/libmpi_cxx.so;/usr/lib/libmpi.so;/usr/lib/x86_64-linux-gnu/libdl.so;/usr/lib/x86_64-linux-gnu/libhwloc.so  
+-- MPI Found: /usr/lib/libmpi_cxx.so/usr/lib/libmpi.so/usr/lib/x86_64-linux-gnu/libdl.so/usr/lib/x86_64-linux-gnu/libhwloc.so
+-- Looking for pthread_setaffinity_np
+-- Looking for pthread_setaffinity_np - found
+-- Performing Test HAS_MARCH_NATIVE
+-- Performing Test HAS_MARCH_NATIVE - Success
+-- Performing Test HAS_MTUNE_NATIVE
+-- Performing Test HAS_MTUNE_NATIVE - Success
+-- Performing Test HAS_WNO_LOCAL_TYPEDEFS
+-- Performing Test HAS_WNO_LOCAL_TYPEDEFS - Success
+-- Performing Test HAS_CRC32
+-- Performing Test HAS_CRC32 - Failed
+-- Release build with C++ flags: -O3 -Wno-unused-local-typedefs -Wno-attributes -march=x86-64 -mtune=x86-64  -Wall -g  -fopenmp
+-- Release build with C flags: -O3 -Wno-attributes -march=x86-64 -mtune=x86-64  -Wall -g  -fopenmp
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Copying Files: *
+-- Installing: /home/bshi/graphlab/release/tests/data
+-- Installing: /home/bshi/graphlab/release/tests/data/CMakeLists.txt
+-- Installing: /home/bshi/graphlab/release/tests/data/test_tsv
+-- Installing: /home/bshi/graphlab/release/tests/data/test_tsv/test.tsv
+-- Installing: /home/bshi/graphlab/release/tests/data/test_snap
+-- Installing: /home/bshi/graphlab/release/tests/data/test_snap/test.snap
+-- Installing: /home/bshi/graphlab/release/tests/data/test_adj
+-- Installing: /home/bshi/graphlab/release/tests/data/test_adj/test.adj
+-- Detected demo app: rpc
+-- Detected demo app: dsl
+-- Detected demo app: pagerank
+-- Detected Toolkit: collaborative_filtering
+-- Detected Toolkit: computer_vision
+-- Detected Toolkit: linear_solvers
+-- Detected Toolkit: graphical_models
+-- Detected App: test_bool_var
+-- Detected App: test_dense_table
+-- Detected App: test_MAD_relation
+-- Detected App: denoise
+-- Detected App: test_sparse_table
+-- Detected Toolkit: topic_modeling
+-- Detected Toolkit: extensions
+-- Detected Toolkit: clustering
+-- Detected Toolkit: graph_analytics
+-- Detected App: hdtm
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bshi/graphlab/release
+
+
+
+======================= Debug =========================
+cmake -D CMAKE_BUILD_TYPE=Debug -D NO_OPENMP:BOOL=false -D NO_MPI:BOOL=false -D NO_TCMALLOC:BOOL=false -D CMAKE_INSTALL_PREFIX:STRING=/usr/local -D EXPERIMENTAL:BOOL=false -D CPP11:BOOL=false -D VID32:BOOL=false ../.
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.a/home/bshi/graphlab/deps/local/lib/libboost_program_options.a/home/bshi/graphlab/deps/local/lib/libboost_system.a/home/bshi/graphlab/deps/local/lib/libboost_iostreams.a/home/bshi/graphlab/deps/local/lib/libboost_context.a/home/bshi/graphlab/deps/local/lib/libboost_date_time.a
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_program_options.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_program_options.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_system.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_system.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_iostreams.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_iostreams.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_context.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_context.so
+-- Boost libs: /home/bshi/graphlab/deps/local/lib/libboost_date_time.a
+-- Boost dyn libs: /home/bshi/graphlab/deps/local/lib/libboost_date_time.so
+-- Boost Shared libs: /home/bshi/graphlab/deps/local/lib/libboost_filesystem.so/home/bshi/graphlab/deps/local/lib/libboost_program_options.so/home/bshi/graphlab/deps/local/lib/libboost_system.so/home/bshi/graphlab/deps/local/lib/libboost_iostreams.so/home/bshi/graphlab/deps/local/lib/libboost_context.so/home/bshi/graphlab/deps/local/lib/libboost_date_time.so
+-- Found Java: /usr/bin/java (found version "1.7.0.65") 
+-- Found JNI: /usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so  
+-- jni.h was found at /usr/lib/jvm/default-java/include/jni.h
+-- Java Home guessed: /usr/lib/jvm/default-java
+-- Found ANT: /usr/bin/ant  
+-- Building libhdfs
+-- Found MPI_C: /usr/lib/libmpi.so;/usr/lib/x86_64-linux-gnu/libdl.so;/usr/lib/x86_64-linux-gnu/libhwloc.so  
+-- Found MPI_CXX: /usr/lib/libmpi_cxx.so;/usr/lib/libmpi.so;/usr/lib/x86_64-linux-gnu/libdl.so;/usr/lib/x86_64-linux-gnu/libhwloc.so  
+-- MPI Found: /usr/lib/libmpi_cxx.so/usr/lib/libmpi.so/usr/lib/x86_64-linux-gnu/libdl.so/usr/lib/x86_64-linux-gnu/libhwloc.so
+-- Looking for pthread_setaffinity_np
+-- Looking for pthread_setaffinity_np - found
+-- Performing Test HAS_MARCH_NATIVE
+-- Performing Test HAS_MARCH_NATIVE - Success
+-- Performing Test HAS_MTUNE_NATIVE
+-- Performing Test HAS_MTUNE_NATIVE - Success
+-- Performing Test HAS_WNO_LOCAL_TYPEDEFS
+-- Performing Test HAS_WNO_LOCAL_TYPEDEFS - Success
+-- Performing Test HAS_CRC32
+-- Performing Test HAS_CRC32 - Failed
+-- Debug build with C++ flags: -O0 -Wno-unused-local-typedefs -Wno-attributes -march=x86-64 -Winit-self  -Wall -g  -fopenmp
+-- Debug build with C flags: -O0 -Wno-attributes -march=x86-64 -Winit-self  -Wall -g  -fopenmp
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Copying Files: *
+-- Installing: /home/bshi/graphlab/debug/tests/data
+-- Up-to-date: /home/bshi/graphlab/debug/tests/data/CMakeLists.txt
+-- Installing: /home/bshi/graphlab/debug/tests/data/test_tsv
+-- Up-to-date: /home/bshi/graphlab/debug/tests/data/test_tsv/test.tsv
+-- Installing: /home/bshi/graphlab/debug/tests/data/test_snap
+-- Up-to-date: /home/bshi/graphlab/debug/tests/data/test_snap/test.snap
+-- Installing: /home/bshi/graphlab/debug/tests/data/test_adj
+-- Up-to-date: /home/bshi/graphlab/debug/tests/data/test_adj/test.adj
+-- Detected demo app: rpc
+-- Detected demo app: dsl
+-- Detected demo app: pagerank
+-- Detected Toolkit: collaborative_filtering
+-- Detected Toolkit: computer_vision
+-- Detected Toolkit: linear_solvers
+-- Detected Toolkit: graphical_models
+-- Detected App: test_bool_var
+-- Detected App: test_dense_table
+-- Detected App: test_MAD_relation
+-- Detected App: denoise
+-- Detected App: test_sparse_table
+-- Detected Toolkit: topic_modeling
+-- Detected Toolkit: extensions
+-- Detected Toolkit: clustering
+-- Detected Toolkit: graph_analytics
+-- Detected App: hdtm
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bshi/graphlab/debug
