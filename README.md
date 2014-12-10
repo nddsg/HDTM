@@ -53,7 +53,7 @@ The first number in file names is the iteration number.
 
 ### Convert `HDTM` binary graph to text file
 
-		./hdtm_ana BINARY_FILE.bin RAND_GRAPH_OUT HIERARCHY_OUT NODE_CHANGES_OUT
+		./hdtm_ana BINARY_FILE.bin ORIGINAL_GRAPH_OUT HIERARCHY_OUT NODE_CHANGES_OUT
 
 * `ORIGINAL_GRAPH_OUT` is the original graph without modification.
 * `HIERARCHY_OUT` is the result hierarchy.
