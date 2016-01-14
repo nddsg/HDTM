@@ -365,7 +365,8 @@ endif()
 # graph data.
 ExternalProject_Add(libjson
   PREFIX ${GraphLab_SOURCE_DIR}/deps/json
-  URL http://graphlab.org/deps/libjson_7.6.0.zip
+  URL http://downloads.sourceforge.net/project/libjson/libjson_7.6.1.zip
+  # URL http://graphlab.org/deps/libjson_7.6.0.zip
   # URL_MD5 dcb326038bd9b710b8f717580c647833
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND ""
@@ -380,7 +381,7 @@ ExternalProject_Add(libjson
 
 ExternalProject_Add(zookeeper
   PREFIX ${GraphLab_SOURCE_DIR}/deps/zookeeper
-  URL http://apache.cs.utah.edu/zookeeper/zookeeper-3.4.5/zookeeper-3.4.5.tar.gz
+  URL http://apache.panu.it/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
   # URL_MD5 f64fef86c0bf2e5e0484d19425b22dcb
   PATCH_COMMAND ${CMAKE_COMMAND} -E copy_directory ${GraphLab_SOURCE_DIR}/patches/zookeeper/ <SOURCE_DIR>
   BUILD_IN_SOURCE 1
