@@ -178,7 +178,7 @@ ExternalProject_Add(libbz2
 ExternalProject_Add(boost
   PREFIX ${GraphLab_SOURCE_DIR}/deps/boost
   # URL "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz"
-  URL "http://mirror.nienbo.com/boost/boost_1_53_0.tar.gz"
+  URL "http://mirror.nienbo.com/boost/boost_1_54_0.tar.gz"
   # URL_MD5 57a9e2047c0f511c4dfcf00eb5eb2fbb
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND
