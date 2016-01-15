@@ -160,7 +160,7 @@ endmacro(requires_eigen)
 ExternalProject_Add(libbz2
   PREFIX ${GraphLab_SOURCE_DIR}/deps/libbz2
   URL http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
-  URL_MD5 00b516f4704d4a7cb50a1d97e6e8e15b
+  # URL_MD5 00b516f4704d4a7cb50a1d97e6e8e15b
   INSTALL_DIR ${GraphLab_SOURCE_DIR}/deps/local
   CONFIGURE_COMMAND ""
   PATCH_COMMAND patch -N -p0 -i ${GraphLab_SOURCE_DIR}/patches/libbz2_fpic.patch || true
@@ -177,8 +177,9 @@ ExternalProject_Add(libbz2
 # unordered containers.
 ExternalProject_Add(boost
   PREFIX ${GraphLab_SOURCE_DIR}/deps/boost
-  URL "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz"
-  URL_MD5 57a9e2047c0f511c4dfcf00eb5eb2fbb
+  # URL "http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz"
+  URL "http://mirror.nienbo.com/boost/boost_1_55_0.tar.gz"
+  # URL_MD5 57a9e2047c0f511c4dfcf00eb5eb2fbb
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND
   ./bootstrap.sh
@@ -341,16 +342,18 @@ endmacro(requires_opencv)
 if (APPLE)
   ExternalProject_Add(libevent
     PREFIX ${GraphLab_SOURCE_DIR}/deps/event
-    URL http://iweb.dl.sourceforge.net/project/levent/libevent/libevent-2.0/libevent-2.0.18-stable.tar.gz
-    URL_MD5 aa1ce9bc0dee7b8084f6855765f2c86a
+    # URL http://iweb.dl.sourceforge.net/project/levent/libevent/libevent-2.0/libevent-2.0.18-stable.tar.gz
+    URL http://downloads.sourceforge.net/project/levent/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
+    # URL_MD5 aa1ce9bc0dee7b8084f6855765f2c86a
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-openssl --enable-shared=no
     INSTALL_DIR ${GraphLab_SOURCE_DIR}/deps/local
   )
 else()
   ExternalProject_Add(libevent
     PREFIX ${GraphLab_SOURCE_DIR}/deps/event
-    URL http://iweb.dl.sourceforge.net/project/levent/libevent/libevent-2.0/libevent-2.0.18-stable.tar.gz
-    URL_MD5 aa1ce9bc0dee7b8084f6855765f2c86a
+    URL http://downloads.sourceforge.net/project/levent/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
+    # URL http://iweb.dl.sourceforge.net/project/levent/libevent/libevent-2.0/libevent-2.0.18-stable.tar.gz
+    # URL_MD5 aa1ce9bc0dee7b8084f6855765f2c86a
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-openssl --enable-shared=no
     INSTALL_DIR ${GraphLab_SOURCE_DIR}/deps/local
     INSTALL_COMMAND prefix=<INSTALL_DIR>/ make install && ${GraphLab_SOURCE_DIR}/patches/libevent_clean_and_remap.sh <INSTALL_DIR>/lib
@@ -365,8 +368,9 @@ endif()
 # graph data.
 ExternalProject_Add(libjson
   PREFIX ${GraphLab_SOURCE_DIR}/deps/json
-  URL http://graphlab.org/deps/libjson_7.6.0.zip
-  URL_MD5 dcb326038bd9b710b8f717580c647833
+  URL http://downloads.sourceforge.net/project/libjson/libjson_7.6.0.zip
+  # URL http://graphlab.org/deps/libjson_7.6.0.zip
+  # URL_MD5 dcb326038bd9b710b8f717580c647833
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND ""
   PATCH_COMMAND patch -N -p1 -i ${GraphLab_SOURCE_DIR}/patches/libjson.patch || true
@@ -380,8 +384,8 @@ ExternalProject_Add(libjson
 
 ExternalProject_Add(zookeeper
   PREFIX ${GraphLab_SOURCE_DIR}/deps/zookeeper
-  URL http://apache.cs.utah.edu/zookeeper/zookeeper-3.4.5/zookeeper-3.4.5.tar.gz
-  URL_MD5 f64fef86c0bf2e5e0484d19425b22dcb
+  URL http://apache.panu.it/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+  # URL_MD5 f64fef86c0bf2e5e0484d19425b22dcb
   PATCH_COMMAND ${CMAKE_COMMAND} -E copy_directory ${GraphLab_SOURCE_DIR}/patches/zookeeper/ <SOURCE_DIR>
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND ./configure --prefix=<INSTALL_DIR> --disable-shared
@@ -426,9 +430,10 @@ if(NOT NO_JAVAC)
     message(STATUS "Building libhdfs")
     ExternalProject_Add(hadoop
       PREFIX ${GraphLab_SOURCE_DIR}/deps/hadoop
-      URL http://graphlab.org/deps/hadoop-1.0.1.tar.gz
-#      URL http://www.gtlib.gatech.edu/pub/apache/hadoop/common/hadoop-1.0.1/hadoop-1.0.1.tar.gz
-      URL_MD5 e627d9b688c4de03cba8313bd0bba148
+      URL https://archive.apache.org/dist/hadoop/core/hadoop-1.0.1/hadoop-1.0.1.tar.gz
+      # URL http://graphlab.org/deps/hadoop-1.0.1.tar.gz
+      # URL http://www.gtlib.gatech.edu/pub/apache/hadoop/common/hadoop-1.0.1/hadoop-1.0.1.tar.gz
+      # URL_MD5 e627d9b688c4de03cba8313bd0bba148
       UPDATE_COMMAND chmod +x <SOURCE_DIR>/src/c++/libhdfs/install-sh <SOURCE_DIR>/src/c++/libhdfs/configure
       PATCH_COMMAND patch -N -p1 -i ${GraphLab_SOURCE_DIR}/patches/libhdfs.patch || true
       BUILD_IN_SOURCE 1
@@ -453,7 +458,7 @@ if(NO_MPI)
   message(STATUS "MPI disabled as a configure option.")
 else()
   #find_package(MPICH2)
-  find_package(MPI) 
+  find_package(MPI)
   if(MPI_FOUND)
     message(STATUS "MPI Found: " ${MPI_LIBRARY} ${MPI_EXTRA_LIBRARY})
     add_definitions(-DHAS_MPI)
@@ -745,10 +750,3 @@ macro(add_jni_library NAME)
     message(STATUS "Not building " ${NAME} " because JNI was not found")
   endif ()
 endmacro(add_jni_library)
-
-
-
-
-
-
-
