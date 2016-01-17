@@ -52,8 +52,8 @@ Example:
  - edges file with vertex id, tab and vertex id
 
   ```
-	1	2
-	1	4
+1	2
+1	4
 	```
 
 Actually the algorithm requires that the words of the articles should be converted as int.
