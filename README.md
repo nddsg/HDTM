@@ -43,12 +43,14 @@ Example:
  HDTM requires:
 
  - a vertices file with a vertex id, a tab and a list of words id space separated
+
  	```
  	1	3 4 5 6 7
  	2 3 4 5 7 8
  	....
  	```
  - edges file with vertex id, tab and vertex id
+ 
   ```
 	1	2
 	1	4
