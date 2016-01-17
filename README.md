@@ -40,6 +40,23 @@ Example:
 					 --prefix /data/bshi/wikipedia/graphlab/result/
 
 
+ HDTM requires:
+
+ - a vertices file with a vertex id, a tab and a list of words id space separated
+ 	```
+ 	1	3 4 5 6 7
+ 	2 3 4 5 7 8
+ 	....
+ 	```
+ - edges file with vertex id, tab and vertex id
+  ```
+	1	2
+	1	4
+	```
+
+Actually the algorithm requires that the words of the articles should be converted as int.
+
+
 When `hdtm` is finished, you will get a set of results that looks like this
 
 		bshi@dsg1:/data/bshi/wikipedia/graphlab/result$ ls
@@ -64,4 +81,3 @@ The first number in file names is the iteration number.
 All scripts used in this project is under `scripts` folder. You can use `data_preprocess.py` to reproduce the result.
 
 Graph generation is done in `R`, and you can find the code under `analysis` folder. You can find R package `rdsg` at http://github.com/bxshi/rdsg.
-
