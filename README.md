@@ -57,7 +57,8 @@ Example:
 4	6
 	```
 
-Actually the algorithm requires that the words of the articles should be converted as int.
+Actually, the algorithm requires that the words of the articles should be converted as int and that
+the values 0 and 1 have not to be used since are utilized for `empty_key` and `deleted_key`.
 
 
 When `hdtm` is finished, you will get a set of results that looks like this
