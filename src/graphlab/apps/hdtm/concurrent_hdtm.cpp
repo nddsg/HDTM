@@ -24,7 +24,7 @@ bool vertex_parser(graph_type& graph,
   while(1) {
     uint32_t token_id;
     strm >> token_id;
-    if(strm.fail()) {
+    if(!strm.good()) {
 			/* Ignore empty vertex, which is unlikely to happen */
 			if(fs.size() == 0) {
 				return true;
