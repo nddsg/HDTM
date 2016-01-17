@@ -45,15 +45,16 @@ Example:
  - a vertices file with a vertex id, a tab and a list of words id space separated
 
  	```
- 	1	3 4 5 6 7
- 	2	3 4 5 7 8
+ 	4	3 4 5 6 7
+ 	5	3 4 5 7 8
+	6	8 10 12 14
  	....
  	```
  - edges file with vertex id, tab and vertex id
 
   ```
-1	2
-1	4
+4	5
+4	6
 	```
 
 Actually the algorithm requires that the words of the articles should be converted as int.
