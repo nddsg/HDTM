@@ -76,9 +76,9 @@ The first number in file names is the iteration number.
 
 		./hdtm_ana BINARY_FILE.bin ORIGINAL_GRAPH_OUT HIERARCHY_OUT NODE_CHANGES_OUT
 
-* `ORIGINAL_GRAPH_OUT` is the original graph without modification.
-* `HIERARCHY_OUT` is the result hierarchy.
-* `NODE_CHANGES_OUT` is the change log of every node in original graph
+* `ORIGINAL_GRAPH_OUT` is a baseline tree generated from input graph. Namely if in the original input graph a node has more than one in-coming edges, it will randomly pick one and discards the rest to construct a tree. The output file format is `src \t dst`.
+* `HIERARCHY_OUT` is the result hierarchy. This is also a tree but the parent are selected based on HDTM's result. The output format is `src \t height \t dst`.
+* `NODE_CHANGES_OUT` is the change log of every node in original graph. The output format is `node_id \t (#current_parent_been_chosen / #iterations) \t #in-coming_edges(parent candidates)`
 
 ## Data analysis
 
